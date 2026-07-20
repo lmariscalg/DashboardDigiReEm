@@ -22,10 +22,10 @@ const config = {
   // Identidad del producto
   // -----------------------------------------------------------
   app: {
-    name: "VibeFast",
+    name: "LaBellaSalon",
     description:
-      "Boilerplate AI-native para founders. Construido para el Curso de Vibecoding Remotto.",
-    domain: "vibefast.dev", // sin https://, sin www
+      "Administra nóminas, ingresos, gastos e inventario de tu salón, estética, SPA o barbería sin hojas de cálculo.",
+    domain: "dashboard-digi-re-em-web.vercel.app", // sin https://, sin www
     locale: "es", // "es" | "en"
     // URL pública: usa NEXT_PUBLIC_APP_URL en .env. En este config solo definimos el default.
     defaultUrl: "http://localhost:3000",
@@ -36,9 +36,9 @@ const config = {
   // -----------------------------------------------------------
   brand: {
     // Color primario en HEX. DaisyUI lo aplica como --color-primary via theme.
-    primary: "#7c3aed", // violet-600
+    primary: "#D9B04A", // dorado — complemento #0D1B3D
     // Logo: puede ser texto o ruta a /public/logo.svg
-    logoText: "VibeFast",
+    logoText: "LaBellaSalon",
     logoSrc: null,
     // Estilo del bordeado global (DaisyUI usa esto para botones, cards)
     radius: "1rem",
@@ -104,15 +104,14 @@ const config = {
       { label: "Características", href: "#features" },
       { label: "Precios", href: "#pricing" },
       { label: "Preguntas", href: "#faq" },
-      { label: "Docs", href: "/docs" },
     ],
     hero: {
-      eyebrow: "Curso Vibecoding · Remotto × Startup Chihuahua",
-      title: "De 0 a producto AI-native en 11 semanas.",
+      eyebrow: "Para dueños de negocios de imagen personal",
+      title: "Deja de calcular nóminas a mano cada quincena.",
       subtitle:
-        "VibeFast es la plantilla del curso: Next.js, Supabase, OpenAI y MCP cableados desde el día 1. Tú extiendes con prompts en Cursor.",
-      cta: { label: "Únete al waitlist", href: "#waitlist" },
-      ctaSecondary: { label: "Ver docs", href: "/docs" },
+        "Centraliza comisiones, ingresos, gastos e inventario en un panel hecho para negocios de imagen personal.",
+      cta: { label: "Probar gratis", href: "#waitlist" },
+      ctaSecondary: null,
     },
     problem: {
       eyebrow: "El problema",
@@ -138,90 +137,75 @@ const config = {
       ],
     },
     features: {
-      eyebrow: "Lo que ya viene listo",
-      title: "Stack completo, una sola decisión por capa.",
-      subtitle: "No pierdes tiempo eligiendo herramientas. Te enfocas en tu producto.",
+      eyebrow: "TODO LO TIENES AQUÍ",
+      title: "Todo lo que necesitas para llevar tu negocio en orden y en un solo lugar.",
+      subtitle:
+        "No pierdes tiempo eligiendo módulos y aplicaciones innecesarios. Te enfocas en tus servicios.",
       items: [
         {
-          icon: "Sparkles",
-          title: "AI nativa",
-          body: "OpenAI con structured outputs, tool use, agentes con LangGraph y MCP. Listo para activar.",
+          icon: "Calculator",
+          title: "Nómina sin Excel",
+          body: "Calcula comisiones y pagos de tu equipo en minutos, no en horas con calculadora y cuaderno.",
         },
         {
-          icon: "Database",
-          title: "Supabase + Auth",
-          body: "Base de datos con RLS, Google Auth y tablas pre-modeladas. No diseñas schema desde cero.",
+          icon: "TrendingUp",
+          title: "Finanzas claras",
+          body: "Ve ingresos, gastos y utilidad del mes en un vistazo, sin adivinar si el negocio ganó o perdió.",
         },
         {
-          icon: "Zap",
-          title: "Deploy en minutos",
-          body: "Vercel + Supabase Cloud. Una URL pública el primer día.",
-        },
-        {
-          icon: "BookOpen",
-          title: "Docs semana a semana",
-          body: "Tutoriales mapeados al temario del curso, con prompts de Cursor listos para copiar.",
-        },
-        {
-          icon: "Mail",
-          title: "Email + analytics",
-          body: "Resend para correos transaccionales y PostHog opcional para tracking.",
-        },
-        {
-          icon: "Cpu",
-          title: "Hardware-ready",
-          body: "Conexión MCP al ESP-Claw para el caso de hardware con IA del Módulo 3.",
+          icon: "Package",
+          title: "Inventario al día",
+          body: "Controla productos, insumos y alertas de stock antes de quedarte sin lo esencial en cita.",
         },
       ],
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      title: "Lo que todo founder pregunta antes de arrancar.",
+      title: "¿Aún tienes preguntas? Normal, aquí van las respuestas.",
+      subtitle:
+        "Porque tomar una buena decisión empieza por entender bien lo que vas a usar.",
       items: [
         {
-          q: "¿Necesito saber programar?",
-          a: "No. El curso asume founders no técnicos. Construyes describiendo en Cursor; el boilerplate hace el resto.",
+          q: "¿Sirve para mi negocio si tengo uñas, SPA, barbería o tatuajes?",
+          a: "Sí. LaBellaSalon está pensada para negocios de imagen personal: comisiones por servicio, venta de productos e inventario de insumos.",
         },
         {
-          q: "¿Cuánto cuesta correr esto?",
-          a: "Vercel y Supabase tienen tiers gratuitos generosos. OpenAI cobra por uso: con gpt-4o-mini, el costo de un MVP del curso ronda US$5-20.",
+          q: "¿Cómo calcula la nómina de mis empleadas?",
+          a: "Registras servicios, comisiones y propinas; el sistema arma el total por persona y periodo para que solo revises y pagues.",
         },
         {
-          q: "¿Puedo cambiar el stack?",
-          a: "Sí, pero el curso (y las docs) asumen este stack. Cambiar pieza por pieza es posible después del curso.",
+          q: "¿Necesito instalar algo en la computadora del salón?",
+          a: "No. Funciona en el navegador desde celular o computadora; entras con tu cuenta y listo.",
         },
         {
-          q: "¿Y si me atoro?",
-          a: "Las docs incluyen una sección de troubleshooting con los 20 errores más comunes. Además hay sesión semanal con el docente.",
+          q: "¿Puedo probarlo antes de contratar un plan?",
+          a: "Sí. Únete al waitlist o empieza con el plan gratuito para ver si se adapta a tu operación diaria.",
         },
       ],
     },
-    socialProof: {
-      text: "Founders del curso ya lanzaron con este stack",
-      logos: ["Remotto", "Startup Chihuahua", "Next.js", "Supabase", "OpenAI", "Vercel"],
-    },
+    socialProof: null,
     testimonials: {
       eyebrow: "Prueba social",
-      title: "Founders que ya lanzaron con VibeFast.",
-      subtitle: "Testimonios de cohortes anteriores del curso.",
+      title: "Lo que dicen quienes ya le dijeron adiós al desorden.",
+      subtitle: null,
       items: [
         {
           quote:
-            "Pasé de una idea en Notion a un MVP con IA en producción en dos semanas. Nunca había tocado código.",
-          author: "Ana Márquez",
-          role: "Founder · Fisio en casa",
+            "Tenía 2 salones y un tercero por abrir y la nómina era un caos, me tardaba 2 días para generarla entre cuadernos y Excel. Ahora le doy tres clics y listo.",
+          author: "Lizet",
+          role: "Uñas Salón y Más, Chihuahua",
         },
         {
           quote:
-            "El boilerplate ya traía auth, base de datos y el agente cableados. Solo describí lo que quería en Cursor.",
-          author: "Diego Sáenz",
-          role: "Founder · Tutor IA",
+            "Antes, manejaba en un sistema genérico las citas y en una hoja de Excel los ingresos y gastos. Es genial que ahora todo lo tengo en la misma aplicación.",
+          author: "Carmen",
+          role: "Nails Lab, Chihuahua",
         },
         {
           quote:
-            "Las docs semana a semana fueron mi mapa. Copiaba el prompt, ajustaba y avanzaba sin atorarme.",
-          author: "Lucía Fernández",
-          role: "Founder · Recetario inteligente",
+            "El que mis clientas puedan agendar sus citas y escoger a su estilista de preferencia, le da un plus a mi negocio.",
+          author: "Gaby",
+          role: "High Life, Chihuahua",
         },
       ],
     },
@@ -242,7 +226,8 @@ const config = {
       placeholder: "tu@email.com",
     },
     footer: {
-      tagline: "Construido para founders. Por Remotto × Startup Chihuahua.",
+      tagline: "Administra nóminas, finanzas e inventario de tu negocio de imagen personal.",
+      creditLine: "Hecho en Chihuahua Méx.",
       columns: [
         {
           title: "Producto",
@@ -252,27 +237,8 @@ const config = {
             { label: "Preguntas", href: "#faq" },
           ],
         },
-        {
-          title: "Recursos",
-          links: [
-            { label: "Docs", href: "/docs" },
-            { label: "Quick start", href: "/docs/setup/quick-start" },
-            { label: "Troubleshooting", href: "/docs/troubleshooting/errores-comunes" },
-          ],
-        },
-        {
-          title: "Comunidad",
-          links: [
-            { label: "GitHub", href: "https://github.com/arampersand/VibeFast", external: true },
-            { label: "Remotto", href: "https://remotto.com", external: true },
-          ],
-        },
       ],
-      // Compat: links planos usados en el bar inferior
-      links: [
-        { label: "Docs", href: "/docs" },
-        { label: "GitHub", href: "https://github.com/arampersand/VibeFast", external: true },
-      ],
+      links: [],
     },
   },
 
@@ -284,29 +250,59 @@ const config = {
   pricing: {
     eyebrow: "Precios",
     title: "Simple y sin sorpresas.",
-    subtitle: "Empieza gratis. Sube de plan cuando tu producto crezca.",
+    subtitle: "Empieza con una demo gratis y escala cuando tu negocio crezca.",
     plans: [
       {
-        id: "starter",
-        name: "Starter",
+        id: "demo",
+        name: "Demo",
         price: 0,
-        currency: "USD",
-        interval: "mes",
-        description: "Para probar el producto.",
-        features: ["Hasta 100 usuarios", "Soporte por email", "Branding VibeFast"],
-        cta: "Empezar gratis",
+        priceLabel: "$0/7 días",
+        currency: "MXN",
+        interval: "7 días",
+        description: "Para conocernos.",
+        features: [
+          "7 días gratis para descubrir qué fácil es hacer tu nómina y cortes de caja.",
+        ],
+        cta: "Probar demo",
       },
       {
-        id: "pro",
-        name: "Pro",
-        price: 29,
-        currency: "USD",
+        id: "emprendedor",
+        name: "Emprendedor",
+        price: 400,
+        currency: "MXN",
         interval: "mes",
-        description: "Para founders que ya facturan.",
-        features: ["Usuarios ilimitados", "Soporte prioritario", "Sin branding"],
-        cta: "Probar Pro",
+        description: "Para el negocio que quiere orden.",
+        features: ["Que los cortes de caja y nómina no te compliquen más."],
+        cta: "Elegir Emprendedor",
+      },
+      {
+        id: "creciendo",
+        name: "Creciendo el Negocio",
+        price: 580,
+        currency: "MXN",
+        interval: "mes",
+        description: "El favorito de nuestros clientes.",
+        features: [
+          "Venta de productos y manejo de inventario.",
+          "Gift Cards digitales y canjeables.",
+          "El plan que usan quienes ya no quieren improvisar.",
+        ],
+        cta: "Elegir Creciendo",
         highlighted: true,
-        stripePriceId: "", // llenar cuando se active payments
+        stripePriceId: "",
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        price: 930,
+        currency: "MXN",
+        interval: "mes/sucursal",
+        description: "Para el negocio que ya escala.",
+        features: [
+          "Todo incluido más soporte prioritario.",
+          "Múltiples sucursales y accesos ilimitados.",
+        ],
+        cta: "Elegir Premium",
       },
     ],
   },

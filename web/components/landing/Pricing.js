@@ -14,7 +14,7 @@ export default function Pricing() {
           {subtitle && <p className="mt-4 text-base-content/70">{subtitle}</p>}
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
+        <div className="mx-auto mt-14 grid max-w-6xl gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {plans.map((plan) => (
             <div
               key={plan.id}
@@ -26,7 +26,7 @@ export default function Pricing() {
             >
               {plan.highlighted && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-content">
-                  Más popular
+                  El favorito
                 </span>
               )}
 
@@ -35,9 +35,10 @@ export default function Pricing() {
 
               <div className="mt-6 flex items-baseline gap-1">
                 <span className="text-4xl font-bold tracking-tight">
-                  {plan.price === 0 ? "Gratis" : `$${plan.price}`}
+                  {plan.priceLabel ??
+                    (plan.price === 0 ? "Gratis" : `$${plan.price}`)}
                 </span>
-                {plan.price !== 0 && (
+                {!plan.priceLabel && plan.price !== 0 && (
                   <span className="text-sm text-base-content/60">
                     {plan.currency}/{plan.interval}
                   </span>

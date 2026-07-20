@@ -45,11 +45,6 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
-          {config.features.googleAuth && (
-            <Link href={config.auth.loginUrl} className="btn btn-sm btn-ghost">
-              Entrar
-            </Link>
-          )}
           <Link href="#waitlist" className="btn btn-sm btn-accent">
             {config.landing.hero.cta.label}
           </Link>

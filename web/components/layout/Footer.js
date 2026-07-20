@@ -16,12 +16,12 @@ function FooterLink({ link, className }) {
 }
 
 export default function Footer() {
-  const { tagline, columns = [] } = config.landing.footer
+  const { tagline, creditLine, columns = [] } = config.landing.footer
 
   return (
     <footer className="border-t border-base-200 bg-base-100">
       <div className="mx-auto max-w-6xl px-4 py-12">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_repeat(3,1fr)]">
+        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr]">
           <div>
             <div className="flex items-center gap-2">
               <Logo className="size-6" />
@@ -51,7 +51,7 @@ export default function Footer() {
           <span>
             © {new Date().getFullYear()} {config.brand.logoText}
           </span>
-          <span>Hecho con VibeFast · Remotto × Startup Chihuahua</span>
+          {creditLine && <span>{creditLine}</span>}
         </div>
       </div>
     </footer>

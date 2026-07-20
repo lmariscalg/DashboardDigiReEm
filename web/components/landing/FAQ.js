@@ -1,7 +1,7 @@
 import config from "@/config"
 
 export default function FAQ() {
-  const { eyebrow, title, items } = config.landing.faq
+  const { eyebrow, title, subtitle, items } = config.landing.faq
 
   return (
     <section id="faq" className="border-t border-base-200 bg-base-200/40 py-20 md:py-28">
@@ -9,6 +9,7 @@ export default function FAQ() {
         <div className="text-center">
           <p className="text-sm font-medium uppercase tracking-wider text-primary">{eyebrow}</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">{title}</h2>
+          {subtitle && <p className="mt-4 text-base-content/70">{subtitle}</p>}
         </div>
 
         <div className="mt-12 space-y-3">
