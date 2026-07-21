@@ -1,6 +1,17 @@
-// Marca de VibeFast: una "V" con forma de símbolo de raíz cuadrada (√).
-// Cuadrado redondeado con el color primary y el trazo en blanco.
+import config from "@/config"
+
 export default function Logo({ className = "size-7" }) {
+  if (config.brand.logoSrc) {
+    return (
+      <img
+        src={config.brand.logoSrc}
+        alt=""
+        className={`inline-block shrink-0 rounded-lg object-contain ${className}`}
+        aria-hidden
+      />
+    )
+  }
+
   return (
     <span
       className={`inline-flex items-center justify-center rounded-lg bg-primary text-primary-content ${className}`}

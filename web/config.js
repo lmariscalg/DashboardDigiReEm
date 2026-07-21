@@ -39,7 +39,7 @@ const config = {
     primary: "#D9B04A", // dorado — complemento #0D1B3D
     // Logo: puede ser texto o ruta a /public/logo.svg
     logoText: "LaBellaSalon",
-    logoSrc: null,
+    logoSrc: "/logo.svg",
     // Estilo del bordeado global (DaisyUI usa esto para botones, cards)
     radius: "1rem",
   },

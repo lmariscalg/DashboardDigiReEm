@@ -13,18 +13,20 @@ export default function Hero() {
   const { eyebrow, title, subtitle, cta, ctaSecondary } = config.landing.hero
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Fondo: cuadrícula + glows de marca */}
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 [mask-image:radial-gradient(75%_60%_at_50%_0%,#000,transparent)]"
-        aria-hidden
-      >
-        <div className="hero-grid absolute inset-0 opacity-70" />
-        <div className="absolute left-1/2 top-[-8rem] size-[640px] -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" />
-        <div className="absolute right-[8%] top-[3rem] size-[360px] rounded-full bg-accent/15 blur-3xl" />
+    <section className="relative isolate overflow-hidden">
+      {/* Fondo: salón en gris + cuadrícula + glows de marca */}
+      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale"
+          style={{ backgroundImage: "url('/hero-salon.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-base-100/55" />
+        <div className="hero-grid absolute inset-0 opacity-30" />
+        <div className="absolute left-1/2 top-[-8rem] size-[640px] -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
+        <div className="absolute right-[8%] top-[3rem] size-[360px] rounded-full bg-accent/10 blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-4xl px-4 pt-20 pb-10 text-center md:pt-28">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 pt-20 pb-10 text-center md:pt-28">
         {eyebrow && (
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-base-300 bg-base-100/70 px-3 py-1 text-xs font-medium text-base-content/70 backdrop-blur">
             <Sparkles className="size-3.5 text-primary" />
@@ -54,7 +56,7 @@ export default function Hero() {
       </div>
 
       {/* Mockup de producto (navegador con la app dentro) */}
-      <div className="mx-auto max-w-5xl px-4 pb-20 md:pb-28">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 pb-20 md:pb-28">
         <div className="mockup-browser border border-base-300 bg-base-100 shadow-2xl shadow-primary/10">
           <div className="mockup-browser-toolbar">
             <div className="input border border-base-300 text-base-content/50">
