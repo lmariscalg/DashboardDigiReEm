@@ -16,14 +16,14 @@
   --color-primary-content: #ffffff;
   --color-secondary: #6d28d9;
   --color-secondary-content: #ffffff;
-  --color-accent: #f97316;
-  --color-accent-content: #ffffff;
-  --color-neutral: #1e293b;
+  --color-accent: #d9b04a;
+  --color-accent-content: #0d1b3e;
+  --color-neutral: #0d1b3e;
   --color-neutral-content: #f8fafc;
   --color-base-100: #ffffff;
-  --color-base-200: #f8fafc;
-  --color-base-300: #e2e8f0;
-  --color-base-content: #1e293b;
+  --color-base-200: #f8f7f4;
+  --color-base-300: #e5e7eb;
+  --color-base-content: #0d1b3e;
   --color-info: #0ea5e9;
   --color-success: #16a34a;
   --color-warning: #f59e0b;
@@ -42,8 +42,8 @@
   --color-primary-content: #ffffff;
   --color-secondary: #8b5cf6;
   --color-secondary-content: #1e1b2e;
-  --color-accent: #fb923c;
-  --color-accent-content: #1e1b2e;
+  --color-accent: #d9b04a;
+  --color-accent-content: #0d1b3e;
   --color-neutral: #e2e8f0;
   --color-neutral-content: #0f172a;
   --color-base-100: #0f172a;
@@ -65,17 +65,17 @@ body {
 }
 
 body {
-  font-family: var(--font-dm-sans, ui-sans-serif, system-ui, sans-serif);
+  font-family: var(--font-geist-sans, ui-sans-serif, system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;
 }
 
-/* Tipografía de display: headings con Space Grotesk */
+/* Títulos y cuerpo: Geist Sans (misma familia que la landing de referencia) */
 h1,
 h2,
 h3,
 h4,
 .font-heading {
-  font-family: var(--font-space-grotesk, var(--font-dm-sans, ui-sans-serif, system-ui, sans-serif));
+  font-family: var(--font-geist-sans, ui-sans-serif, system-ui, sans-serif);
 }
 
 /* ============================================================
@@ -115,6 +115,58 @@ h4,
 /* Modal de búsqueda: fondo opaco del tema (por encima del overlay oscuro). */
 .docs-search-panel {
   background-color: var(--color-base-100);
+}
+
+/* Tokens LaBellaPro (referencia vibecode-myrons) */
+:root {
+  --brand-navy: #0d1b3e;
+  --brand-gold: #d9b04a;
+  --brand-muted: #6b7280;
+  --brand-warm: #f8f7f4;
+  --brand-card: #f9f9f9;
+  --brand-mockup: #f5f5f3;
+  --brand-icon-hover: #f9f3ea;
+}
+
+.text-brand-navy {
+  color: var(--brand-navy);
+}
+.text-brand-gold {
+  color: var(--brand-gold);
+}
+.text-brand-muted {
+  color: var(--brand-muted);
+}
+.bg-brand-navy {
+  background-color: var(--brand-navy);
+}
+.bg-brand-gold {
+  background-color: var(--brand-gold);
+}
+.fill-brand-gold {
+  fill: var(--brand-gold);
+}
+.bg-brand-warm {
+  background-color: var(--brand-warm);
+}
+.bg-brand-section {
+  background-color: #f6f7fb;
+}
+.bg-brand-card {
+  background-color: var(--brand-card);
+}
+.border-brand-gold {
+  border-color: var(--brand-gold);
+}
+.btn-brand-gold {
+  border-radius: 9999px;
+  background-color: var(--brand-gold);
+  color: var(--brand-navy);
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+.btn-brand-gold:hover {
+  background-color: #c9a03f;
 }
 
 /* Patrón de cuadrícula sutil para el fondo del Hero (se adapta al tema). */

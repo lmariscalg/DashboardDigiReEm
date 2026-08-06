@@ -22,7 +22,7 @@ const config = {
   // Identidad del producto
   // -----------------------------------------------------------
   app: {
-    name: "LaBellaSalon",
+    name: "LaBellaPro",
     description:
       "Administra nóminas, ingresos, gastos e inventario de tu salón, estética, SPA o barbería sin hojas de cálculo.",
     domain: "dashboard-digi-re-em-web.vercel.app", // sin https://, sin www
@@ -38,7 +38,7 @@ const config = {
     // Color primario en HEX. DaisyUI lo aplica como --color-primary via theme.
     primary: "#D9B04A", // dorado — complemento #0D1B3D
     // Logo: puede ser texto o ruta a /public/logo.svg
-    logoText: "LaBellaSalon",
+    logoText: "LaBellaPro",
     logoSrc: "/logo.svg",
     // Estilo del bordeado global (DaisyUI usa esto para botones, cards)
     radius: "1rem",
@@ -101,17 +101,22 @@ const config = {
   // -----------------------------------------------------------
   landing: {
     nav: [
-      { label: "Características", href: "#features" },
-      { label: "Precios", href: "#pricing" },
-      { label: "Preguntas", href: "#faq" },
+      { label: "Beneficios", href: "#features" },
+      { label: "Planes", href: "#pricing" },
+      { label: "Testimonios", href: "#testimonials" },
+      { label: "FAQ", href: "#faq" },
     ],
     hero: {
-      eyebrow: "Para dueños de negocios de imagen personal",
-      title: "Deja de calcular nóminas a mano cada quincena.",
+      eyebrow: "14 años · Hecho en México MX",
+      title: "Tu negocio merece correr solo,",
+      titleAccent: "aunque tú no estés mirando.",
       subtitle:
-        "Centraliza comisiones, ingresos, gastos e inventario en un panel hecho para negocios de imagen personal.",
-      cta: { label: "Probar gratis", href: "#waitlist" },
-      ctaSecondary: null,
+        "La agenda digital que organiza tus citas, tu equipo y tu dinero, para que tú te concentres en lo que haces mejor.",
+      painText:
+        "¿Cansado de perder citas en WhatsApp, de no saber cuánto ganaste esta semana, o de que tu equipo no sepa qué hacer sin ti? La Agenda Digital de LaBellaPro centraliza todo en un solo lugar.",
+      cta: { label: "Quiero organizar mi negocio — gratis", href: "#contact" },
+      ctaSecondary: { label: "Ver planes y precios →", href: "#pricing" },
+      trustLine: "Sin tarjeta de crédito · Con los colores e imagen de tu negocio",
     },
     problem: {
       eyebrow: "El problema",
@@ -137,55 +142,65 @@ const config = {
       ],
     },
     features: {
-      eyebrow: "TODO LO TIENES AQUÍ",
+      eyebrow: null,
       title: "Todo lo que necesitas para llevar tu negocio en orden y en un solo lugar.",
-      subtitle:
-        "No pierdes tiempo eligiendo módulos y aplicaciones innecesarios. Te enfocas en tus servicios.",
+      subtitle: null,
+      closingLine:
+        "14 años trabajando con negocios mexicanos, somos el aliado tecnológico que tu negocio ya necesitaba.",
       items: [
         {
+          icon: "Calendar",
+          title: "Nunca más una cita perdida.",
+          body: "No más cuadernos cuadriculados y hojas de Excel mal diseñadas. Ten a todos tus profesionistas horarios y clientes en una sola pantalla.",
+        },
+        {
           icon: "Calculator",
-          title: "Nómina sin Excel",
-          body: "Calcula comisiones y pagos de tu equipo en minutos, no en horas con calculadora y cuaderno.",
+          title: "Paga a tu equipo sin hacer cuentas.",
+          body: "Calcula comisiones, horas y pagos en segundos. Lo que antes te tomaba una tarde, ahora te toma tres minutos.",
         },
         {
-          icon: "TrendingUp",
-          title: "Finanzas claras",
-          body: "Ve ingresos, gastos y utilidad del mes en un vistazo, sin adivinar si el negocio ganó o perdió.",
+          icon: "Gift",
+          title: "Tus clientes regresan más seguido.",
+          body: "Vende Gift Cards digitales con control de saldo integrado. Perfecto para regalos, cumpleaños y promociones.",
         },
         {
-          icon: "Package",
-          title: "Inventario al día",
-          body: "Controla productos, insumos y alertas de stock antes de quedarte sin lo esencial en cita.",
+          icon: "Palette",
+          title: "La aplicación lleva el nombre de tu negocio.",
+          body: "Nada de logos ajenos. Tus clientes ven tu marca, no la nuestra.",
         },
       ],
     },
     faq: {
-      eyebrow: "Preguntas frecuentes",
+      eyebrow: null,
       title: "¿Aún tienes preguntas? Normal, aquí van las respuestas.",
       subtitle:
         "Porque tomar una buena decisión empieza por entender bien lo que vas a usar.",
       items: [
         {
-          q: "¿Sirve para mi negocio si tengo uñas, SPA, barbería o tatuajes?",
-          a: "Sí. LaBellaSalon está pensada para negocios de imagen personal: comisiones por servicio, venta de productos e inventario de insumos.",
+          q: "¿Qué tipo de negocios pueden usar la Agenda Digital de LaBellaPro?",
+            a: "Si tienes un salón de uñas, estética, barbería, estudio de tatuajes... esta agenda digital fue hecha pensando exactamente en ti. En esos días donde tienes 3 clientes esperando, 2 o más empleados atendiendo otros clientes y el cuaderno de citas desaparecido.",
         },
         {
-          q: "¿Cómo calcula la nómina de mis empleadas?",
-          a: "Registras servicios, comisiones y propinas; el sistema arma el total por persona y periodo para que solo revises y pagues.",
+          q: "¿Necesito saber de tecnología?",
+          a: "Para nada. Si mandas mensajes por WhatsApp, ya sabes suficiente. Además, en tu primera sesión te acompañamos a configurar todo, sin costo y a tu ritmo.",
         },
         {
-          q: "¿Necesito instalar algo en la computadora del salón?",
-          a: "No. Funciona en el navegador desde celular o computadora; entras con tu cuenta y listo.",
+          q: "¿Solo incluye la agenda digital?",
+          a: "Ojalá fuera tan sencillo como solo agendar citas. Tu negocio es más complejo que eso… desde que llega el cliente hasta que cuadras tu cierre del día. Cobras servicios, registras gastos, calculas nóminas, manejas crédito a clientes, vendes y canjeas Gift Cards, controlas tu inventario... y más. Todo desde el mismo lugar. Sin saltar entre apps, cuadernos ni hojas de Excel.",
         },
         {
-          q: "¿Puedo probarlo antes de contratar un plan?",
-          a: "Sí. Únete al waitlist o empieza con el plan gratuito para ver si se adapta a tu operación diaria.",
+          q: "¿Funciona con varios empleados?",
+          a: "Sí, y es donde más brilla. Cada empleado con sus servicios y sus comisiones personalizadas y calculadas automáticamente. ¿Tienes un equipo grande? Mejor aún, cuéntanos cuántos son, hemos visto de todo."
+        },
+        {
+          q: "¿Puedo cambiar de plan?",
+          a: "Cuando quieras. Así de simple. Sin contratos eternos ni letras pequeñas. Tú decides cuándo crecer.",
         },
       ],
     },
     socialProof: null,
     testimonials: {
-      eyebrow: "Prueba social",
+      eyebrow: null,
       title: "Lo que dicen quienes ya le dijeron adiós al desorden.",
       subtitle: null,
       items: [
@@ -210,31 +225,59 @@ const config = {
       ],
     },
     finalCta: {
-      eyebrow: "Tu turno",
-      title: "Deja de configurar. Empieza a construir.",
-      subtitle:
-        "Clona la plantilla, edita config.js y ten tu producto AI-native en producción esta semana.",
-      cta: { label: "Únete al waitlist", href: "#waitlist" },
+      eyebrow: null,
+      title: "¿Listo para dejar de improvisar?",
+      subtitle: "Empieza gratis hoy. Sin tarjeta. Sin compromisos.",
+      cta: { label: "Quiero organizar mi negocio ahora", href: "#contact" },
       ctaSecondary: { label: "Leer las docs", href: "/docs" },
     },
     waitlist: {
-      eyebrow: "Únete primero",
-      title: "Sé de los primeros en saber.",
-      subtitle: "Te avisamos cuando abramos cupos para la siguiente cohorte.",
-      successMessage: "¡Listo! Te avisamos en cuanto haya novedades.",
-      buttonLabel: "Quiero entrar",
-      placeholder: "tu@email.com",
+      eyebrow: null,
+      title: "Hablemos de tu negocio",
+      subtitle:
+        "Cuéntanos qué necesitas y te mostraremos cómo LaBellaPro puede ayudarte.",
+      successMessage: "¡Gracias! Recibimos tu mensaje y te contactaremos pronto.",
+      buttonLabel: "Enviar mensaje",
+      placeholders: {
+        name: "Tu nombre",
+        email: "tu@email.com",
+        phone: "Tu número de teléfono (opcional)",
+        message: "Escribe tu mensaje aquí...",
+      },
+      fields: {
+        name: "Nombre",
+        email: "Email",
+        phone: "Teléfono (opcional)",
+        message: "Mensaje",
+        optIn: "Quiero recibir información",
+      },
     },
     footer: {
-      tagline: "Administra nóminas, finanzas e inventario de tu negocio de imagen personal.",
-      creditLine: "Hecho en Chihuahua Méx.",
+      tagline: "14 años haciendo crecer negocios mexicanos.",
+      creditLine: "Hecho en México, para negocios mexicanos.",
       columns: [
         {
-          title: "Producto",
+          title: "NAVEGACIÓN",
           links: [
-            { label: "Características", href: "#features" },
-            { label: "Precios", href: "#pricing" },
-            { label: "Preguntas", href: "#faq" },
+            { label: "Inicio", href: "#hero" },
+            { label: "Beneficios", href: "#features" },
+            { label: "Planes", href: "#pricing" },
+            { label: "Testimonios", href: "#testimonials" },
+            { label: "Contacto", href: "#contact" },
+            { label: "Aviso de Privacidad", href: "#" },
+            { label: "Términos y Condiciones", href: "#" },
+          ],
+        },
+        {
+          title: "CONTACTO",
+          links: [
+            { label: "liliana.mariscal@gmail.com", href: "mailto:liliana.mariscal@gmail.com" },
+            { label: "WhatsApp +52 614 1892291", href: "https://wa.me/526141892291", external: true },
+            {
+              label: "Chihuahua, Chih., México",
+              href: "https://www.google.com/maps/search/?api=1&query=Chihuahua%2C%20Chih.%2C%20M%C3%A9xico",
+              external: true,
+            },
           ],
         },
       ],
@@ -248,9 +291,9 @@ const config = {
   // El cobro real (Stripe) depende de features.payments.
   // -----------------------------------------------------------
   pricing: {
-    eyebrow: "Precios",
-    title: "Simple y sin sorpresas.",
-    subtitle: "Empieza con una demo gratis y escala cuando tu negocio crezca.",
+    eyebrow: null,
+    title: "Empieza gratis. Crece cuando quieras.",
+    subtitle: "Sin contratos, sin sorpresas.",
     plans: [
       {
         id: "demo",
@@ -258,12 +301,13 @@ const config = {
         price: 0,
         priceLabel: "$0/7 días",
         currency: "MXN",
-        interval: "7 días",
+        interval: "14 días",
         description: "Para conocernos.",
         features: [
           "7 días gratis para descubrir qué fácil es hacer tu nómina y cortes de caja.",
+          "Soporte en español",
         ],
-        cta: "Probar demo",
+        cta: "Empezar con Demo",
       },
       {
         id: "emprendedor",
@@ -272,8 +316,12 @@ const config = {
         currency: "MXN",
         interval: "mes",
         description: "Para el negocio que quiere orden.",
-        features: ["Que los cortes de caja y nómina no te compliquen más."],
-        cta: "Elegir Emprendedor",
+        features: [
+          "Que los cortes de caja y nómina no te compliquen más.",
+          "Colores e imagen personalizados",
+          "Soporte en español",
+        ],
+        cta: "Empezar con Emprendedor",
       },
       {
         id: "creciendo",
@@ -282,12 +330,14 @@ const config = {
         currency: "MXN",
         interval: "mes",
         description: "El favorito de nuestros clientes.",
+        badge: "Más popular",
         features: [
-          "Venta de productos y manejo de inventario.",
-          "Gift Cards digitales y canjeables.",
+          "Venta de productos y manejo de inventario, Gift Cards digitales y canjeables.",
           "El plan que usan quienes ya no quieren improvisar.",
+          "Colores e imagen personalizados",
+          "Soporte en español",
         ],
-        cta: "Elegir Creciendo",
+        cta: "Quiero este plan",
         highlighted: true,
         stripePriceId: "",
       },
@@ -296,15 +346,32 @@ const config = {
         name: "Premium",
         price: 930,
         currency: "MXN",
-        interval: "mes/sucursal",
+        interval: "mes/salón",
         description: "Para el negocio que ya escala.",
         features: [
-          "Todo incluido más soporte prioritario.",
-          "Múltiples sucursales y accesos ilimitados.",
+          "Todo incluido más soporte prioritario, múltiples sucursales y accesos ilimitados.",
+          "Colores e imagen personalizados",
+          "Soporte en español",
         ],
-        cta: "Elegir Premium",
+        cta: "Conocer Premium",
       },
     ],
+    comparisonTable: {
+      headers: ["Demo", "Emprendedor", "Creciendo el Negocio", "Premium"],
+      highlightedColumn: 2,
+      rows: [
+        { label: "Módulo de agenda y venta de servicios", values: ["si", "si", "si", "si"] },
+        { label: "Profesionistas en la Agenda", values: ["8", "8", "15", "Ilimitado"] },
+        { label: "Cortes de caja y nómina", values: ["si", "si", "si", "si"] },
+        { label: "Productos e inventarios", values: ["no", "no", "si", "si"] },
+        { label: "Reportes especiales", values: ["no", "no", "si", "si"] },
+        { label: "Venta y Canje de Gift Cards", values: ["no", "no", "si", "si"] },
+        { label: "Usuarios del sistema", values: ["2", "2", "5", "Ilimitado"] },
+        { label: "Ventas a crédito", values: ["no", "no", "si", "si"] },
+        { label: "Salones", values: ["1", "1", "1", "Ilimitado (requiere licencia por sucursal)"] },
+      ],
+    },
+    taxDisclaimer: "Estos precios no incluyen IVA.",
   },
 }
 
