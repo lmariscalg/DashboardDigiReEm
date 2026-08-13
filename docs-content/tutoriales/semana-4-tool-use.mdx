@@ -1,0 +1,37 @@
+---
+title: Semana 4 · Tool use y automatización
+description: La IA actúa sobre tu producto — llama funciones reales con argumentos validados.
+order: 4
+---
+
+<StackBadge tech={["openai", "langgraph", "next"]} />
+
+**27 – 29 jul 2026 · Técnico**
+
+<Callout type="info">
+Esta página se completa cuando termine <strong>Fase 3</strong> del boilerplate.
+</Callout>
+
+## Qué vas a tener al final
+
+- ✅ Una tool propia registrada en el registry.
+- ✅ El modelo decide cuándo llamarla y con qué argumentos.
+- ✅ Auditoría: cada tool call queda guardada en `tool_calls`.
+- ✅ Un flujo `recuperar → decidir → actuar` con LangGraph.
+
+## Concepto: tool use
+
+Tool use es darle al modelo una lista de **funciones que puede invocar**. El modelo decide cuándo llamarlas y con qué argumentos; tú ejecutas la función y le devuelves el resultado. El loop sigue hasta que el modelo da una respuesta final.
+
+VibeFast usa un **registry pattern**: defines la tool una vez, está disponible tanto para tool use (OpenAI) como para MCP (Sem 5).
+
+## Pasos (preview)
+
+1. Crear una tool en `lib/tools/examples/`.
+2. Registrarla con `registerTool({ name, description, parameters, execute })`.
+3. Probar desde `/chat`.
+4. Armar un flujo LangGraph que use 2+ tools.
+
+## Entregable
+
+Un flujo / acción de IA que ejecuta funciones reales de tu producto.

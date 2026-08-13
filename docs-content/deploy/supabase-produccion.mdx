@@ -1,0 +1,25 @@
+---
+title: Supabase en producción
+description: Aplicar migrations y configurar producción.
+order: 2
+---
+
+<StackBadge tech={["supabase"]} />
+
+<Callout type="info">
+Página completa cuando termine Fase 1.
+</Callout>
+
+## Aplicar migrations
+
+```bash
+npx supabase link --project-ref <tu-ref>
+npx supabase db push
+```
+
+## Configurar redirect URLs
+
+En Supabase → Authentication → URL Configuration:
+
+- **Site URL**: tu URL de Vercel (`https://<tu-producto>.vercel.app` o tu dominio).
+- **Redirect URLs**: agrega `https://<tu-producto>.vercel.app/api/auth/callback`.

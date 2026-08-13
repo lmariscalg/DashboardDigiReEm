@@ -1,0 +1,37 @@
+---
+title: Tool use (registry)
+description: Una sola fuente de verdad para tools — disponible vía OpenAI function calling y MCP.
+order: 5
+---
+
+<StackBadge tech={["openai", "mcp"]} />
+
+<Callout type="info">
+Documentación completa disponible cuando termine Fase 3–4.
+</Callout>
+
+## Pattern
+
+```js
+// lib/tools/examples/sendEmail.js
+import { registerTool } from "@/lib/tools"
+
+registerTool({
+  name: "sendEmail",
+  description: "Envía un email transaccional.",
+  parameters: {
+    type: "object",
+    properties: {
+      to: { type: "string" },
+      subject: { type: "string" },
+      body: { type: "string" },
+    },
+    required: ["to", "subject", "body"],
+  },
+  async execute({ to, subject, body }) {
+    // ...
+  },
+})
+```
+
+Una sola registración → disponible para tool use de OpenAI **y** para el servidor MCP.

@@ -1,0 +1,23 @@
+---
+title: Receta · Chatbot con RAG
+description: Sube documentos, hazle preguntas. Respuestas con citaciones.
+order: 2
+---
+
+<StackBadge tech={["openai", "pgvector", "supabase"]} />
+
+<Callout type="info">
+Receta completa cuando termine Fase 5.
+</Callout>
+
+## Qué construyes
+
+Un chatbot que responde solo sobre **tus documentos** (PDF, web, notas). Cada respuesta incluye citaciones al chunk fuente.
+
+## Pasos (preview)
+
+1. Activar `features.rag: true`.
+2. UI para subir PDFs (`/upload`).
+3. Pipeline: extract → chunk → embed → store en `documents`.
+4. Endpoint `/api/rag/query`: embed pregunta → similarity search → pasa contexto al modelo.
+5. UI de chat con badges de citación.

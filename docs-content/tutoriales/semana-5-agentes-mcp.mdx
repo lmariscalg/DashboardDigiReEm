@@ -1,0 +1,39 @@
+---
+title: Semana 5 · Agentes y MCP
+description: Un agente que decide en pasos hacia un objetivo, expuesto vía MCP.
+order: 5
+---
+
+<StackBadge tech={["openai", "langgraph", "mcp"]} />
+
+**3 – 5 ago 2026 · Técnico**
+
+<Callout type="info">
+Esta página se completa cuando termine <strong>Fase 4</strong> del boilerplate (Agentes + MCP).
+</Callout>
+
+## Qué vas a tener al final
+
+- ✅ Un agente LangGraph que resuelve una tarea de tu producto en múltiples pasos.
+- ✅ El mismo registry de tools expuesto como servidor MCP (`/api/mcp`).
+- ✅ Evals básicas: medir si el agente funciona y no empeora con cada cambio.
+- ✅ Observabilidad: ver qué hizo el agente y por qué.
+
+## Concepto: MCP
+
+MCP (Model Context Protocol) es un **estándar abierto** para conectar IA con herramientas y datos. En VibeFast lo usamos doble:
+
+- Tu app **expone** sus tools vía MCP (`/api/mcp`) — Claude Desktop, otros clientes pueden usar tu producto como tool.
+- Tu app **consume** MCPs externos — Gmail, Notion, ESP-Claw del Módulo 3.
+
+## Pasos (preview)
+
+1. Definir el grafo del agente (`lib/agents/graph.js`).
+2. Conectar tools del registry como nodos.
+3. Levantar el servidor MCP.
+4. Probar con un cliente MCP externo (Claude Desktop o curl).
+5. Correr evals con escenarios fijos.
+
+## Entregable
+
+Feature con agente + evals corriendo.

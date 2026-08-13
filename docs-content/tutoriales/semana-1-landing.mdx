@@ -1,0 +1,89 @@
+---
+title: Semana 1 · Tu landing en vivo
+description: Setup completo, landing personalizada y waitlist capturando emails en producción.
+order: 1
+---
+
+<StackBadge tech={["next", "tailwind", "supabase", "vercel", "yarn", "cursor"]} />
+
+**6 – 8 jul 2026 · Técnico**
+
+<VideoLoom title="Loom de la semana 1" />
+
+## Qué vas a tener al final
+
+- ✅ Entorno de desarrollo completo (Cursor + Node + yarn).
+- ✅ Cuentas creadas en GitHub, Supabase, Vercel.
+- ✅ Plantilla VibeFast clonada y corriendo en local.
+- ✅ Landing con tu copy, colores y un solo CTA claro.
+- ✅ Waitlist conectado a Supabase capturando emails reales.
+- ✅ Todo deployado en Vercel con una URL pública.
+
+## Lo que debes tener antes
+
+- Ficha de proyecto de [Semana 0](/docs/tutoriales/semana-0-arranque) — necesitas saber qué producto y para quién antes de escribir el copy.
+
+## Paso 1 · Setup de entorno
+
+Sigue [Setup → Quick start](/docs/setup/quick-start) completo hasta el Paso 7. Tope: 30 min.
+
+<Checkpoint>
+Ves la landing por default de VibeFast en `localhost:3000`.
+</Checkpoint>
+
+## Paso 2 · Personaliza tu producto en `config.js`
+
+Abre `web/config.js`. Es **el único archivo** que necesitas tocar para cambiar el branding entero.
+
+<PromptBox label="Prompt para Cursor — copy del producto">
+Soy founder de un producto que \{describe tu producto en 1 frase}.
+Mi ICP es \{describe tu cliente ideal en 1 frase}.
+El dolor principal que resuelvo es \{describe el dolor}.
+
+Edita web/config.js. Actualiza:
+- app.name, app.description, app.domain
+- brand.primary (sugiere un hex acorde al producto)
+- landing.hero (eyebrow corto, title de máximo 12 palabras, subtitle de 1 frase, cta.label como verbo de acción)
+- landing.features.items: 3 items relevantes a mi producto, cada uno con icon de lucide-react, title corto y body de 1 frase
+- landing.faq.items: 4 preguntas que un visitante real haría
+
+Devuelve el archivo completo. No cambies la estructura del objeto.
+</PromptBox>
+
+<Callout type="info">
+Si Cursor sugiere algo raro, refínalo. El prompt está para arrancar, no para terminar.
+</Callout>
+
+## Paso 3 · Guarda y mira el cambio
+
+Guarda `config.js`. Refresca `localhost:3000`. Deberías ver tu producto.
+
+<Checkpoint>
+✅ Tu título aparece en el Hero.
+✅ Los 3 features tienen iconos.
+✅ El color primario es el tuyo.
+</Checkpoint>
+
+## Paso 4 · Conecta el waitlist a Supabase
+
+(Esta parte queda lista en Fase 1 del boilerplate — cuando esté, este paso se actualiza con el código real.)
+
+Por ahora, el formulario funciona pero solo loggea al servidor. En Sem 1 final, lo conectamos a Supabase para que guarde emails de verdad.
+
+## Paso 5 · Deploy a Vercel
+
+Sigue el [Paso 9 del quick start](/docs/setup/quick-start#paso-9). Cuando termines, comparte tu URL en el canal del curso.
+
+## Entregable de la semana
+
+**URL pública de tu landing.** Mándala al docente con:
+
+1. La URL.
+2. 1 captura de pantalla.
+3. 1 párrafo de qué hace tu producto (el mismo del `app.description`).
+
+## Si te sobra tiempo
+
+- Agrega una sección de "logos de clientes" con tu propio logo + algunos placeholders.
+- Cambia el favicon (`web/public/favicon.svg`).
+- Customiza `og:image` para que el preview en WhatsApp/Twitter se vea bien.

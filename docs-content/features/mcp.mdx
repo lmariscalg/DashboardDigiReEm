@@ -1,0 +1,18 @@
+---
+title: MCP (Model Context Protocol)
+description: Tu app como servidor y cliente MCP.
+order: 7
+---
+
+<StackBadge tech={["mcp"]} />
+
+<Callout type="info">
+Documentación completa disponible cuando termine Fase 4.
+</Callout>
+
+## Doble rol
+
+- **Servidor MCP** en `/api/mcp` — expone el registry de tools. Cualquier cliente MCP (Claude Desktop, otros) puede usar tu producto como herramienta.
+- **Cliente MCP** en `lib/mcp/client.js` — consume MCPs externos (Gmail, Notion, ESP-Claw).
+
+Pieza central que conecta Web ↔ Hardware en Sem 8–9.

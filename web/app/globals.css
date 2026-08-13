@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* ============================================================
+   Tema de marca LaBellaPro
+   Paleta: ciruela #4A2748 + rosa empolvado #D9A7B0 + marfil #FAF8F5.
+   El primary real lo inyecta config.brand.primary desde layout.js
+   como --color-primary inline (config = fuente de verdad).
+   ============================================================ */
+@plugin "daisyui/theme" {
+  name: "vibefast";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+  --color-primary: #4a2748;
+  --color-primary-content: #faf8f5;
+  --color-secondary: #d9a7b0;
+  --color-secondary-content: #4a2748;
+  --color-accent: #d9a7b0;
+  --color-accent-content: #4a2748;
+  --color-neutral: #252225;
+  --color-neutral-content: #faf8f5;
+  --color-base-100: #faf8f5;
+  --color-base-200: #e8d8c8;
+  --color-base-300: #d9a7b0;
+  --color-base-content: #252225;
+  --color-info: #a99caf;
+  --color-success: #16a34a;
+  --color-warning: #d9a7b0;
+  --color-error: #dc2626;
+  --radius-box: 1rem;
+  --radius-field: 0.5rem;
+  --radius-selector: 0.5rem;
+}
+
+@plugin "daisyui/theme" {
+  name: "vibefast-dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-primary: #d9a7b0;
+  --color-primary-content: #4a2748;
+  --color-secondary: #a99caf;
+  --color-secondary-content: #faf8f5;
+  --color-accent: #e8d8c8;
+  --color-accent-content: #252225;
+  --color-neutral: #e8d8c8;
+  --color-neutral-content: #252225;
+  --color-base-100: #252225;
+  --color-base-200: #4a2748;
+  --color-base-300: #a99caf;
+  --color-base-content: #faf8f5;
+  --color-info: #a99caf;
+  --color-success: #4ade80;
+  --color-warning: #d9a7b0;
+  --color-error: #f87171;
+  --radius-box: 1rem;
+  --radius-field: 0.5rem;
+  --radius-selector: 0.5rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body, "Work Sans", ui-sans-serif, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fraunces para títulos; Work Sans para el cuerpo */
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+  font-family: var(--font-heading, Fraunces, Georgia, serif);
+}
+
+/* ============================================================
+   Primitivas UX globales (skill ui-ux-pro-max)
+   ============================================================ */
+
+/* Foco visible accesible en cualquier elemento interactivo (skill §1, High).
+   Anillo con offset que funciona sobre cualquier fondo del tema. */
+:where(a, button, input, select, textarea, summary, [role="button"], [tabindex]):focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--color-base-100),
+    0 0 0 4px var(--color-primary);
+  border-radius: var(--radius-field, 0.5rem);
+}
+
+/* El input del modal de búsqueda no lleva anillo propio: el modal ya es el
+   contexto de foco (evita el doble contorno). Regla sin capa para ganarle a la
+   global de :focus-visible. */
+.docs-search-panel input:focus,
+.docs-search-panel input:focus-visible {
+  box-shadow: none;
+}
+
+/* Respeta prefers-reduced-motion: neutraliza animaciones/transiciones (skill §7). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Modal de búsqueda: fondo opaco del tema (por encima del overlay oscuro). */
+.docs-search-panel {
+  background-color: var(--color-base-100);
+}
+
+/* Tokens LaBellaPro — paleta ciruela / rosa empolvado / marfil */
+:root {
+  --brand-navy: #4a2748;
+  --brand-gold: #d9a7b0;
+  --brand-muted: #a99caf;
+  --brand-warm: #faf8f5;
+  --brand-card: #ffffff;
+  --brand-mockup: #e8d8c8;
+  --brand-icon-hover: #e8d8c8;
+  --brand-champagne: #e8d8c8;
+  --brand-ivory: #faf8f5;
+  --brand-carbon: #252225;
+}
+
+.text-brand-navy {
+  color: var(--brand-navy);
+}
+.text-brand-gold {
+  color: var(--brand-gold);
+}
+.text-brand-muted {
+  color: var(--brand-muted);
+}
+.bg-brand-navy {
+  background-color: var(--brand-navy);
+}
+.bg-brand-gold {
+  background-color: var(--brand-gold);
+}
+.fill-brand-gold {
+  fill: var(--brand-gold);
+}
+.bg-brand-warm {
+  background-color: var(--brand-warm);
+}
+.bg-brand-section {
+  background-color: var(--brand-champagne);
+}
+.bg-brand-card {
+  background-color: var(--brand-card);
+}
+.border-brand-gold {
+  border-color: var(--brand-gold);
+}
+.btn-brand-gold {
+  border-radius: 9999px;
+  background-color: var(--brand-gold);
+  color: var(--brand-navy);
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+.btn-brand-gold:hover {
+  background-color: #c48e99;
+}
+
+/* Patrón de cuadrícula sutil para el fondo del Hero (se adapta al tema). */
+.hero-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklch, var(--color-base-content) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--color-base-content) 7%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 44px 44px;
+}
+
+/* Prose tweaks para /docs — jerarquía marcada y ritmo vertical amplio */
+.prose-vf h1 {
+  @apply text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-6;
+}
+.prose-vf h2 {
+  @apply text-2xl md:text-3xl font-semibold tracking-tight mt-16 mb-5;
+}
+.prose-vf h3 {
+  @apply text-xl font-semibold mt-12 mb-3;
+}
+.prose-vf p {
+  @apply leading-8 my-6 text-base-content/80;
+}
+/* Lede: párrafo de entrada, más grande y suave (gana a .prose-vf p por orden). */
+.lede,
+.prose-vf .lede {
+  @apply text-lg md:text-xl leading-relaxed text-base-content/60 my-5;
+}
+.prose-vf ul {
+  @apply list-disc pl-6 my-6 space-y-2.5;
+}
+.prose-vf ol {
+  @apply list-decimal pl-6 my-6 space-y-2.5;
+}
+.prose-vf li {
+  @apply leading-8;
+}
+/* Primer bloque tras el encabezado: sin margen superior extra */
+.prose-vf > :first-child {
+  @apply mt-0;
+}
+.prose-vf a {
+  @apply text-primary underline underline-offset-2 hover:text-primary/80;
+}
+.prose-vf code:not(pre code) {
+  @apply rounded bg-primary/10 px-1.5 py-0.5 text-sm font-mono text-primary;
+}
+/* El wrapper de CodeBlock pone borde/redondeo/margen y el fondo; el <pre> solo
+   padding+scroll (fondo transparente para no afectar al pre de PromptBox). */
+.prose-vf pre {
+  @apply p-4 overflow-x-auto text-sm font-mono;
+}
+.prose-vf pre code {
+  @apply grid; /* cada línea en su fila, permite resaltar líneas */
+}
+.prose-vf pre code span[data-line] {
+  @apply px-1;
+}
+.prose-vf code[data-theme] span {
+  color: var(--shiki-light);
+}
+[data-theme="vibefast-dark"] .prose-vf code[data-theme] span {
+  color: var(--shiki-dark);
+}
+.prose-vf table {
+  @apply w-full text-sm my-6 border-collapse;
+}
+.prose-vf th {
+  @apply text-left font-semibold p-3 border-b-2 border-base-300;
+}
+.prose-vf td {
+  @apply p-3 border-b border-base-300 align-top;
+}
+.prose-vf hr {
+  @apply my-8 border-base-300;
+}

@@ -1,0 +1,193 @@
+---
+title: Quick start (30 min)
+description: De cero a deploy en Vercel en una sentada.
+order: 1
+---
+
+<StackBadge tech={["github", "yarn", "supabase", "vercel"]} />
+
+Al final de esta página vas a tener:
+
+- ✅ Tu repo en GitHub con el código de VibeFast.
+- ✅ El proyecto corriendo en `localhost:3000`.
+- ✅ Supabase configurado con todas las tablas pre-cargadas.
+- ✅ Tu landing deployada en Vercel con una URL pública.
+
+**Tiempo estimado: 30–60 minutos** (la primera vez puede tardar un poco más).
+
+## Antes de empezar
+
+Necesitas cuentas en:
+
+- [GitHub](https://github.com)
+- [Vercel](https://vercel.com) — login con GitHub
+- [Supabase](https://supabase.com) — login con GitHub
+- [OpenAI](https://platform.openai.com) — para Sem 3+ (opcional ahora)
+- [Resend](https://resend.com) — para enviar emails (opcional Sem 1)
+
+También necesitas instalado:
+
+- **Node 20 o 22 LTS** ([descarga aquí](https://nodejs.org)) — usa una versión **par** (LTS). El repo trae un `.nvmrc`: con nvm corre `nvm use`.
+- **yarn 1.x** — después de instalar Node corre `npm install -g yarn`
+- **Cursor** ([cursor.com](https://cursor.com))
+
+## Paso 1 · Crea tu repo desde el template
+
+Ve al [repo de VibeFast en GitHub](https://github.com/arampersand/VibeFast) y haz click en **"Use this template" → Create a new repository**.
+
+Ponle el nombre de tu producto (ej. `mi-producto-mvp`). Marca como privado por ahora.
+
+## Paso 2 · Clona y abre con Cursor
+
+Clona **tu** repo (el que creaste con el template) y ábrelo en Cursor:
+
+```bash
+git clone https://github.com/<tu-usuario>/<tu-producto>.git
+cd <tu-producto>
+cursor .
+```
+
+<Callout type="info" title="¿Solo quieres probar el boilerplate?">
+Si aún no creaste tu repo y solo quieres explorar VibeFast, clona el original directo y desconéctalo de su origin para empezar limpio:
+
+```bash
+git clone https://github.com/arampersand/VibeFast.git mi-producto
+cd mi-producto
+git remote remove origin
+yarn install
+yarn dev
+```
+</Callout>
+
+## Paso 3 · Instala dependencias
+
+En la terminal de Cursor:
+
+```bash
+yarn install
+```
+
+Esto puede tardar 1–2 minutos la primera vez.
+
+## Paso 4 · Configura Supabase
+
+1. Crea un proyecto nuevo en [supabase.com/dashboard](https://supabase.com/dashboard) (región más cercana: `South America (São Paulo)` o `US East`).
+2. Espera a que termine de provisionar (~1 min).
+3. Ve a **Settings → API** y copia:
+   - `URL` → será tu `NEXT_PUBLIC_SUPABASE_URL`
+   - `anon public` key → será tu `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `service_role` key → será tu `SUPABASE_SERVICE_ROLE_KEY` (¡no la compartas!)
+
+## Paso 5 · Crea tu `.env.local`
+
+Copia el template:
+
+```bash
+cp web/.env.example web/.env.local
+```
+
+Abre `web/.env.local` y pega las keys de Supabase del paso anterior. El archivo se ve así:
+
+```bash
+# Sem 1 — obligatorias
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+
+# Sem 3+ — para las features de IA
+OPENAI_API_KEY=
+
+# Opcionales
+RESEND_API_KEY=
+NEXT_PUBLIC_POSTHOG_KEY=
+```
+
+Por ahora solo necesitas las 4 primeras. El detalle de cada una (y de dónde sale) está en [Variables de entorno](/docs/setup/variables-de-entorno).
+
+<Callout type="warning" title="Nunca subas .env.local a git">
+Ya está en `.gitignore`. Mantenlo así. La `service_role` key es como la llave maestra de tu base de datos.
+</Callout>
+
+## Paso 6 · Sube el schema a Supabase
+
+(Esto vendrá en Sem 2 cuando agreguemos Auth + DB. Por ahora puedes saltarlo y correr la landing en local.)
+
+## Paso 7 · Personaliza tu producto
+
+Abre `web/config.js`. Cambia:
+
+- `app.name` — el nombre de tu producto.
+- `app.description` — qué hace tu producto en una frase.
+- `landing.hero.title` — el titular de tu landing.
+- `brand.primary` — tu color (hex).
+
+<PromptBox label="Prompt para Cursor (ayuda con el copy)">
+Estoy editando web/config.js para mi producto que es \{describe tu producto en 1 frase}.
+Mi audiencia es \{describe tu ICP en 1 frase}.
+Sugiéreme valores para landing.hero (eyebrow, title, subtitle, cta.label) y landing.features.items[] (3 items con icon de lucide, title y body de 1 frase).
+Devuelve solo el código del objeto, no expliques.
+</PromptBox>
+
+## Paso 8 · Corre en local
+
+```bash
+yarn dev
+```
+
+Abre `http://localhost:3000`. Deberías ver tu landing con tus textos.
+
+<Checkpoint>
+✅ Ves tu landing con tu título y color primario.
+✅ El menú lleva a `/docs` y muestra estas docs.
+✅ El formulario de waitlist responde (sin guardar todavía — eso es Sem 1).
+
+¿Algo no carga? → [Troubleshooting](/docs/troubleshooting/errores-comunes).
+</Checkpoint>
+
+## Paso 9 · Deploy a Vercel
+
+1. Ve a [vercel.com/new](https://vercel.com/new).
+2. **Import** tu repo de GitHub.
+3. **Root Directory**: pon `web` (importante porque es monorepo).
+4. **Framework Preset**: Next.js (se autodetecta).
+5. En **Environment Variables**, agrega todas las que tienes en `web/.env.local`.
+6. Click **Deploy**.
+
+En 2–3 minutos tienes una URL pública. Compártela.
+
+## Estructura del proyecto
+
+No necesitas conocerla toda hoy, pero ubícate. Esto es lo que hay:
+
+| Carpeta | Qué vive ahí |
+|---------|--------------|
+| `web/app` | Las **páginas** (cada carpeta con `page.js` = una ruta). |
+| `web/app/api` | Los **endpoints** del backend (1 archivo = 1 API). |
+| `web/components` | Los **componentes** de React (landing, docs, UI). |
+| `web/lib` | **Helpers**: Supabase, OpenAI, Resend, utilidades. |
+| `web/config.js` | La **configuración** de tu producto (ver abajo). |
+| `supabase/` | Migrations y schema de la base de datos. |
+| `docs-content/` | Estas **docs** en MDX (son tuyas, edítalas). |
+
+<Callout type="info" title="Regla mental">
+¿Algo se ve en pantalla? → está en `web/app` o `web/components`. ¿Algo que habla con un servicio (IA, DB, email)? → está en `web/app/api` o `web/lib`.
+</Callout>
+
+## El archivo config.js
+
+`web/config.js` es **el archivo más importante** del boilerplate: cambiarlo cambia tu producto entero sin abrir JSX. Cada sección está comentada:
+
+- `app` — nombre, descripción, dominio de tu producto.
+- `brand` — color primario, logo, radios.
+- `features` — toggles para prender/apagar cada feature (waitlist, chat, agentes…).
+- `landing` — todo el copy de la página pública (hero, features, FAQ, pricing).
+- `pricing` — los planes.
+
+<Callout type="success" title="Empieza por aquí en Semana 1">
+Abre `web/config.js` y edita `app` + `landing.hero`. Con eso tu landing ya es tuya.
+</Callout>
+
+## ¿Y ahora?
+
+→ Sigue con el [tutorial de 5 minutos: Semana 1 · Landing](/docs/tutoriales/semana-1-landing).

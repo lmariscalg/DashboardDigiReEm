@@ -1,0 +1,65 @@
+---
+title: Cómo usar estas docs
+description: Convenciones que usamos para que no te pierdas.
+order: 3
+---
+
+Cada página de estas docs sigue convenciones simples. Conocerlas te ahorra tiempo.
+
+## Componentes visuales que vas a ver
+
+### Prompts para Cursor
+
+Los bloques azulados son prompts listos para copiar y pegar en Cursor:
+
+<PromptBox>
+Crea un componente Button con variantes primary, secondary y ghost. Usa DaisyUI.
+</PromptBox>
+
+### Callouts
+
+<Callout type="info" title="Info">
+Notas explicativas — léelas pero no son críticas.
+</Callout>
+
+<Callout type="warning" title="Cuidado">
+Errores comunes que vas a cometer si no lees con atención.
+</Callout>
+
+<Callout type="success" title="Buena práctica">
+Patrones recomendados.
+</Callout>
+
+<Callout type="danger" title="No hagas esto">
+Antipatterns que rompen producción.
+</Callout>
+
+### Checkpoints
+
+Al final de cada paso de tutorial hay un checkpoint:
+
+<Checkpoint>
+Si todo va bien, abre `localhost:3000` y deberías ver tu landing con el nombre de tu producto. ¿No la ves? → [Troubleshooting](/docs/troubleshooting/errores-comunes).
+</Checkpoint>
+
+### StackBadges
+
+Cada tutorial empieza con una fila de chips mostrando qué tecnologías toca:
+
+<StackBadge tech={["next", "supabase", "openai"]} />
+
+### Videos del docente
+
+<VideoLoom title="Video de la semana" />
+
+## Estructura de los tutoriales semanales
+
+Cada `semana-N` sigue siempre la misma estructura:
+
+1. **Qué vas a tener al final** — checklist visual del entregable.
+2. **Lo que debes tener antes** — link a semanas previas.
+3. **Pasos 1, 2, 3…** — cada uno con un PromptBox.
+4. **Entregable** — qué subir al docente.
+5. **Si te sobra tiempo** — extensiones opcionales.
+
+Lee los pasos en orden. No saltes.

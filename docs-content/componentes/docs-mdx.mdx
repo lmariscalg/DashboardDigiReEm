@@ -1,0 +1,53 @@
+---
+title: Componentes MDX
+description: PromptBox, Callout, Checkpoint, StackBadge, VideoLoom.
+order: 2
+---
+
+Componentes disponibles dentro de cualquier archivo `.mdx` en `docs-content/`.
+
+## PromptBox
+
+Bloque copy-paste de un prompt para Cursor.
+
+```mdx
+<PromptBox>
+Tu prompt aquí.
+</PromptBox>
+```
+
+## Callout
+
+Avisos con 4 variantes: `info`, `warning`, `success`, `danger`.
+
+```mdx
+<Callout type="warning" title="Cuidado">
+Mensaje.
+</Callout>
+```
+
+## Checkpoint
+
+Para el final de cada paso de tutorial.
+
+```mdx
+<Checkpoint>
+Deberías ver X. ¿No lo ves? → [link](/docs/troubleshooting/errores-comunes).
+</Checkpoint>
+```
+
+## StackBadge
+
+Chips de tecnologías.
+
+```mdx
+<StackBadge tech={["next", "supabase", "openai"]} />
+```
+
+## VideoLoom
+
+Embed de Loom — pasa el URL share, lo convierte a embed.
+
+```mdx
+<VideoLoom url="https://www.loom.com/share/XXXX" title="Mi video" />
+```

@@ -1,0 +1,26 @@
+---
+title: Database (Supabase + Postgres)
+description: Schema pre-modelado, RLS estricto, pgvector listo para activar.
+order: 2
+---
+
+<StackBadge tech={["supabase", "postgres", "pgvector"]} />
+
+<Callout type="info">
+Documentación completa disponible cuando termine Fase 1.
+</Callout>
+
+## Tablas pre-construidas
+
+| Tabla | Propósito | Sem |
+|---|---|---|
+| `profiles` | Extiende `auth.users` | 2+ |
+| `waitlist` | Captura emails pre-launch | 1 |
+| `core_items` | CRUD genérico — renombra a tu dominio | 2 |
+| `ai_conversations` | Historial de chat | 3+ |
+| `ai_messages` | Mensajes individuales | 3+ |
+| `tool_calls` | Auditoría de tool use | 4–5 |
+| `documents` | RAG con embeddings vector(1536) | Opcional |
+| `events` | Analytics fallback | Opcional |
+
+Todas con **Row Level Security (RLS) estricta** — un usuario solo ve sus propias filas.

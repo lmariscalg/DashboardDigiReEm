@@ -1,0 +1,40 @@
+---
+title: Variables de entorno
+description: Las keys que viven en .env.local y de dónde sacarlas.
+order: 3
+---
+
+Todas las keys del proyecto viven en `web/.env.local` (que **nunca** sube a git). El archivo `web/.env.example` te muestra qué variables necesitas.
+
+## Las críticas (Sem 1)
+
+```bash
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+NEXT_PUBLIC_SUPABASE_URL=...           # Supabase → Settings → API
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_ROLE_KEY=...
+```
+
+## Las de Sem 3+
+
+```bash
+OPENAI_API_KEY=sk-...                  # OpenAI → API Keys
+```
+
+## Las opcionales
+
+```bash
+RESEND_API_KEY=re_...                  # Email transaccional
+NEXT_PUBLIC_POSTHOG_KEY=phc_...        # Analytics
+GOOGLE_OAUTH_CLIENT_ID=...             # Receta agente Gmail
+GOOGLE_OAUTH_CLIENT_SECRET=...
+```
+
+## En producción (Vercel)
+
+Las mismas variables las pegas en **Vercel → Project → Settings → Environment Variables**. Marca como `Production`, `Preview` y `Development` según corresponda.
+
+<Callout type="warning" title="Las que empiezan con NEXT_PUBLIC_ son visibles en el navegador">
+Nunca pongas secrets ahí. `NEXT_PUBLIC_SUPABASE_ANON_KEY` está bien (es pública por diseño). `SUPABASE_SERVICE_ROLE_KEY` NUNCA con NEXT_PUBLIC_.
+</Callout>

@@ -1,0 +1,29 @@
+---
+title: Auth (Google + Supabase)
+description: Login con Google sobre Supabase Auth.
+order: 1
+---
+
+<StackBadge tech={["supabase", "auth"]} />
+
+<Callout type="info">
+Documentación completa disponible cuando termine Fase 1 del boilerplate.
+</Callout>
+
+## Resumen
+
+VibeFast usa **Supabase Auth** con provider Google. Toda la sesión vive en cookies del navegador, refrescadas por `middleware.js`.
+
+Activación: `features.googleAuth: true` en `config.js`.
+
+## Endpoints relevantes
+
+- `/login` — pantalla de login.
+- `/api/auth/callback` — recibe el redirect de Google.
+- `/(app)/*` — rutas protegidas; el layout chequea sesión.
+
+## Cómo configurar Google OAuth en Supabase
+
+1. Crea credenciales OAuth en [Google Cloud Console](https://console.cloud.google.com).
+2. Pega Client ID + Secret en Supabase → Authentication → Providers → Google.
+3. Agrega tu URL de callback (`https://<tu-proyecto>.supabase.co/auth/v1/callback`) en los Authorized redirect URIs de Google.

@@ -1,0 +1,37 @@
+---
+title: Semana 2 · MVP con auth y core feature
+description: Google login y el CRUD central del producto, sobre tablas pre-modeladas.
+order: 2
+---
+
+<StackBadge tech={["next", "supabase", "auth", "cursor"]} />
+
+**13 – 15 jul 2026 · Técnico**
+
+<Callout type="info">
+Esta página se completa cuando termine <strong>Fase 1</strong> del boilerplate (Auth + DB). Por ahora muestra el contrato y los entregables.
+</Callout>
+
+## Qué vas a tener al final
+
+- ✅ Login con Google funcionando.
+- ✅ `/dashboard` protegido — solo usuarios logueados entran.
+- ✅ CRUD genérico (`core_items`) renombrado a tu dominio (ej. "leads", "recetas", "proyectos").
+- ✅ Tracking de 2–3 eventos clave (opcional).
+
+## Lo que debes tener antes
+
+- [Semana 1](/docs/tutoriales/semana-1-landing) completada — landing en producción.
+- Proyecto Supabase creado.
+- Variables de entorno de Supabase en `.env.local`.
+
+## Pasos
+
+1. Aplicar migrations de Supabase (`supabase db push` o vía dashboard SQL).
+2. Configurar Google OAuth en Supabase (ver [Features → Auth](/docs/features/auth)).
+3. Renombrar `core_items` a tu dominio con prompt de Cursor.
+4. Personalizar el dashboard con la lógica de tu producto.
+
+## Entregable
+
+MVP con login + core feature funcionando. URL pública.

@@ -1,0 +1,16 @@
+---
+title: Conectar tu dominio
+description: De .vercel.app a tu propio dominio.
+order: 3
+---
+
+1. En Vercel → Project → Settings → Domains → Add.
+2. Pega tu dominio (`miproducto.com`).
+3. Vercel te da registros DNS (A o CNAME). Cópialos en tu proveedor (Namecheap, Google Domains, Cloudflare).
+4. Espera 5–60 min a que propague.
+5. Actualiza `config.app.domain` y `NEXT_PUBLIC_APP_URL`.
+6. Re-deploya.
+
+<Callout type="info">
+También actualiza Supabase Auth Site URL y Redirect URLs para que apunten a tu nuevo dominio.
+</Callout>

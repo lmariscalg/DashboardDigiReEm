@@ -1,0 +1,18 @@
+---
+title: RAG (pgvector)
+description: Embeddings + retrieval sobre tus propios documentos.
+order: 8
+---
+
+<StackBadge tech={["pgvector", "openai"]} />
+
+<Callout type="info">
+Feature opcional. Documentación completa cuando termine Fase 5.
+</Callout>
+
+Activación: `features.rag: true`. Requiere extensión `pgvector` en Supabase (viene en la migration 005).
+
+Helpers en `lib/rag/`:
+- `chunk.js` — split de documentos en pedazos.
+- `embed.js` — embeddings con OpenAI.
+- `retrieve.js` — similarity search en `documents`.

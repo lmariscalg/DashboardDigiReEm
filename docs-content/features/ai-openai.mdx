@@ -1,0 +1,23 @@
+---
+title: AI · OpenAI
+description: Chat streaming y structured outputs con Zod.
+order: 4
+---
+
+<StackBadge tech={["openai"]} />
+
+<Callout type="info">
+Documentación completa disponible cuando termine Fase 3.
+</Callout>
+
+## Helpers principales
+
+```js
+import { streamChat } from "@/lib/openai/chat"
+import { generateObject } from "@/lib/openai/structured"
+```
+
+- `streamChat(messages)` — chat streaming para UIs interactivas.
+- `generateObject(schema, prompt)` — JSON tipado garantizado por el modelo.
+
+Configuración de modelos y costo en `config.ai`.

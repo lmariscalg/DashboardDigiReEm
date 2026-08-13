@@ -1,0 +1,60 @@
+---
+title: Errores comunes
+description: Los 20 errores que vas a encontrar (y cómo resolverlos).
+order: 1
+---
+
+<Callout type="info">
+Lista en construcción. Se llena durante las primeras cohortes con los errores reales.
+</Callout>
+
+## `yarn install` falla
+
+**Síntoma**: errores de versión de Node o paquetes incompatibles.
+
+**Fix**:
+
+```bash
+node --version  # Debe ser >= 20
+yarn --version  # Debe ser 1.22.x
+rm -rf node_modules yarn.lock
+yarn install
+```
+
+## Landing carga pero `/docs` da 404
+
+**Síntoma**: navegas a `localhost:3000/docs` y ves 404.
+
+**Causa**: la carpeta `docs-content/` no existe o está vacía.
+
+**Fix**: confirma que `docs-content/` existe en la raíz del monorepo con archivos `.mdx`.
+
+## `OPENAI_API_KEY is not defined`
+
+**Síntoma**: error al hacer una llamada de IA.
+
+**Fix**: copia tu key de [OpenAI](https://platform.openai.com/api-keys) a `web/.env.local`. **Reinicia** `yarn dev` (las env vars no se hot-reloadean).
+
+## Build de Vercel falla con `Module not found`
+
+**Síntoma**: deploy falla con `Cannot find module '@/...'`.
+
+**Causa**: olvidaste poner **Root Directory: `web`** en Vercel.
+
+**Fix**: Vercel → Project → Settings → General → Root Directory = `web`. Re-deploy.
+
+## Supabase devuelve `JWT expired`
+
+**Síntoma**: peticiones del cliente fallan con 401 después de un rato.
+
+**Causa**: el middleware no está refrescando la sesión.
+
+**Fix**: revisa que `web/middleware.js` esté implementado (Fase 1) y no sea el stub.
+
+## El waitlist no guarda emails
+
+**Síntoma**: signups exitosos en UI pero no aparecen en Supabase.
+
+**Causa probable (Fase 0)**: estamos en stub que solo loggea.
+
+**Fix**: espera a Fase 1 del boilerplate o revisa logs del servidor (`console.log` del stub).

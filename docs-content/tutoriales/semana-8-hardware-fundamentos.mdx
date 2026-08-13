@@ -1,0 +1,36 @@
+---
+title: Semana 8 · ESP-Claw (fundamentos)
+description: Agente de IA corriendo en el propio ESP32, conectado vía MCP.
+order: 8
+---
+
+<StackBadge tech={["esp", "mcp", "openai"]} />
+
+**24 – 26 ago 2026 · Técnico**
+
+<Callout type="info">
+Esta página se completa cuando termine <strong>Fase 6</strong> del boilerplate (Hardware).
+</Callout>
+
+## Qué vas a tener al final
+
+- ✅ Kit ESP-Claw configurado y conectado por WiFi.
+- ✅ Un comportamiento básico definido por lenguaje natural ("chat para crear").
+- ✅ El ESP32 conectado a tu web app vía MCP — tu agente puede dispararlo.
+
+## Concepto: ESP-Claw
+
+ESP-Claw es un framework de **chat para crear** que corre un agente de IA en el propio ESP32 (edge), con motor híbrido LLM + Lua. Defines comportamiento describiéndolo en lenguaje natural; el LLM decide y las reglas confirmadas se fijan como scripts Lua locales (ejecución determinista, offline).
+
+Funciona como server y client MCP — enlaza directo con lo que hiciste en [Semana 5](/docs/tutoriales/semana-5-agentes-mcp).
+
+## Pasos (preview)
+
+1. Flashear ESP-Claw al ESP32.
+2. Configurar WiFi del dispositivo.
+3. Definir un comportamiento simple por chat.
+4. Conectarlo a tu `/api/mcp` desde el ejemplo `firmware/examples/02-mcp-bridge/`.
+
+## Entregable
+
+ESP-Claw configurado + comportamiento básico definido por lenguaje natural.

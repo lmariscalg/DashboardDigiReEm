@@ -1,0 +1,21 @@
+{
+  "name": "labellapro-landing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Landing page para LaBellaPro",
+  "workspaces": [
+    "web",
+    "docs"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+    },
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24",
+    "yarn": "^1.22.0"
+  },
+  "packageManager": "yarn@1.22.22"
+}

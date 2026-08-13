@@ -1,0 +1,23 @@
+---
+title: Receta · SaaS con suscripción
+description: Stripe + paywall + plan management.
+order: 3
+---
+
+<StackBadge tech={["next", "supabase"]} />
+
+<Callout type="info">
+Receta opcional, fuera del temario base. Disponible cuando se active el módulo Stripe.
+</Callout>
+
+## Qué construyes
+
+Un SaaS donde los usuarios pagan suscripción mensual para acceder a tu producto. Stripe maneja el cobro; tu app gatea features por plan.
+
+## Pasos (preview)
+
+1. Activar `features.payments: true`.
+2. Configurar productos en Stripe Dashboard.
+3. Pegar `stripePriceId` en cada plan de `config.pricing.plans`.
+4. Implementar checkout y webhook.
+5. Gatear rutas/features con un helper `hasActiveSubscription(user)`.
